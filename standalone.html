@@ -259,20 +259,13 @@
         /* 步骤项 */
         .step-list li {
             margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
+            padding-left: 0;
         }
 
-        /* 步骤图标 */
-        .step-list li:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 5px;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background-color: #3498db;
+        /* 旋转动画 */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         /* 进度条容器 */
@@ -309,76 +302,6 @@
             border-top: 2px solid white;
             border-radius: 50%;
             animation: spin 1s linear infinite;
-        }
-
-        /* 旋转动画 */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* 步骤状态指示器 */
-        .step-status {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-
-        /* 待处理状态 */
-        .step-status.pending {
-            background-color: #bdc3c7;
-        }
-
-        /* 进行中状态 */
-        .step-status.in-progress {
-            background-color: #3498db;
-            animation: pulse 1.5s infinite;
-        }
-
-        /* 脉冲动画 */
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        /* 已完成状态 */
-        .step-status.completed {
-            background-color: #2ecc71;
-            position: relative;
-        }
-
-        /* 已完成状态图标 */
-        .step-status.completed:after {
-            content: "✓";
-            color: white;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        /* 错误状态 */
-        .step-status.error {
-            background-color: #e74c3c;
-            position: relative;
-        }
-
-        /* 错误状态图标 */
-        .step-status.error:after {
-            content: "!";
-            color: white;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 12px;
-            font-weight: bold;
         }
 
         /* 文件上传提示 */
@@ -430,10 +353,10 @@
                 <h3>使用说明</h3>
                 <div class="step-instructions">
                     <ul class="step-list">
-                        <li><span id="step1Status" class="step-status"></span>上传PNG格式的印章图片</li>
-                        <li><span id="step2Status" class="step-status"></span>上传需要添加骑缝章的PDF文件</li>
-                        <li><span id="step3Status" class="step-status"></span>系统自动切割印章（无需手动操作）</li>
-                        <li><span id="step4Status" class="step-status"></span>点击生成按钮创建带骑缝章的PDF</li>
+                        <li>上传PNG格式的印章图片</li>
+                        <li>上传需要添加骑缝章的PDF文件</li>
+                        <li>系统自动切割印章（无需手动操作）</li>
+                        <li>点击生成按钮创建带骑缝章的PDF</li>
                     </ul>
                 </div>
                 <p><strong>注意事项：</strong></p>
