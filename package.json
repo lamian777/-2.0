@@ -1,0 +1,34 @@
+{
+  "name": "qifeng-stamp-tool",
+  "productName": "骑缝章工具",
+  "version": "1.0.0",
+  "description": "PDF文档骑缝章生成工具",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --mac",
+    "pack": "electron-builder --dir"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.11"
+  },
+  "build": {
+    "appId": "com.qifeng.stamptool",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": ["dmg"],
+      "icon": "build/icon.icns"
+    },
+    "files": [
+      "**/*",
+      "!build",
+      "!dist"
+    ]
+  }
+}
